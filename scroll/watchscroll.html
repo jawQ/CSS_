@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      height: 10000px;
+    }
+
+    .parent {
+      /* width: 750px; */
+      position: static;
+      border: 1px solid #000;
+      /* overflow: hidden; */
+    }
+
+    nav {
+      width: 100%;
+      border: 1px solid #00f;
+      height: 100px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      /* background-color: orange; */
+    }
+
+    main.scrollObj {
+      border: 1px solid #f00;
+      height: 200px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      /* margin-top: 300px; */
+    }
+  </style>
+</head>
+
+<body>
+  <nav></nav>
+  <div class="parent">
+    <main class="scrollObj"></main>
+  </div>
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    let parent = document.querySelector('.parent')
+    let nav = document.querySelector('nav')
+    let scrollObj = $('.scrollObj')
+    // console.log(nav)
+    // console.log(parent)
+    // console.log(scrollObj)
+    console.log('--------------')
+    // console.log(window.scrollY)
+    console.log(window)
+    console.log(scrollObj)
+    console.log(scrollObj.offsetTop)
+    console.log(scrollObj.screenY)
+    var _onscroll = function (e) {
+      let distance = document.documentElement.scrollTop || document.body.scrollTop
+      let Y_scrollY = $(window)[0].scrollY
+      let Y_offsettop = scrollObj[0].offsetTop
+      console.log('开始滚动了...')
+      console.log(distance)
+      console.log(Y_scrollY)
+      console.log(Y_offsettop) // 这里因为main是不动的了,因此是不变.
+      // console.log('查看动态元素距离...屏幕顶端....距离为....', Y_offsettop- Y_scrollY)
+      // console.log(e)
+      if (Y_scrollY < 364) {
+        nav.style.backgroundColor = '#fff'
+      } else {
+        nav.style.backgroundColor = 'orange'
+      }
+    }
+    window.addEventListener('scroll', _onscroll, false)
+  </script>
+</body>
+
+</html>
