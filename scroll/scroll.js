@@ -46,19 +46,10 @@ $(document).ready(function () {
   }
   document.title = title;
 
-  //获取页面的title
-  // $.ajax({
-  //     type: "GET",
-  //     url: "http://pro365.cn/mobile/poem/title.jhtml?poemId="+poemId+"&adId="+adId,
-  //     success: function(res){
-  //          document.title=res.data.name;
-  //     }
-  // });
-
   //获取页面的其它数据
   $.ajax({
     type: "GET",
-    url: "http://pro365.cn/mobile/poem.jhtml?poemId=" + poemId + "&adId=" + adId + "&less=less&size=11",
+    url:
     success: function (res) {
       var poem = res.data.poem;
       initPage(poem);
@@ -70,7 +61,7 @@ $(document).ready(function () {
       if (localStorage.getItem("poem") == undefined) {
         $.ajax({
           type: "GET",
-          url: "http://pro365.cn/mobile/poem.jhtml?poemId=" + poemId + "&adId=" + adId + "&less=all&size=11",
+          url: 
           success: function (res) {
             var poem = res.data.poem;
             localStorage.setItem("poem", JSON.stringify(poem));
@@ -88,7 +79,7 @@ function initPage(poem) {
   if (poem.node.nodeFloor.length > 0) {
     $("#expandFloorNameDiv").append("<div id='leftTextDiv'>切换楼层</div>");
     if (poem.node.nodeFloor.length > 2) {
-      $("#expandFloorNameDiv").append("<div id='rightDownImgDiv3' onclick='showMoreTabsDiv()'><img id='rightDownImg1' src='http://res.pro365.cn/shop/icon_down.png'></div>");
+      $("#expandFloorNameDiv").append("<div id='rightDownImgDiv3' onclick='showMoreTabsDiv()'><img id='rightDownImg1' src=></div>");
     }
     $("#expandFloorNameDiv").append("<div class='greySmallLine'></div>");
     for (var nodeIndex = 0; nodeIndex < poem.node.nodeFloor.length; nodeIndex++) {
@@ -99,7 +90,7 @@ function initPage(poem) {
       $("#productBody").append(drawProductList(nodeFloor, nodeIndex));
     }
     if (poem.node.nodeFloor.length > 2) {
-      $("#topTabsDiv").append("<div id='rightDownImgDiv' onclick='showMoreTabsDiv()'><img id='rightDownImg' src='http://res.pro365.cn/shop/icon_down.png'></div>");
+      $("#topTabsDiv").append("<div id='rightDownImgDiv' onclick='showMoreTabsDiv()'><img id='rightDownImg' src=''></div>");
     } else {
       $("#topTabsDiv").append("<div id='rightDownImgDiv2'></div>");
     }
