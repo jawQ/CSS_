@@ -122,7 +122,7 @@ function drawProductList(nodeFloor, nodeIndex) {
 function drawProductItem(product) {
   var zhekouStr = product.zhekou == 100 ? "<div class='empty_text'></div>" : "<div class='zhekou_text'>" + (product.zhekou / 10) + "折</div>";
   var path_seg = innerPage ? "#/" : "";
-  var $aElement = $("<a class='product_item' href='http://m.pro365.cn/" + path_seg + "product/" + product.id + "/" + product.goods + "'><div class='show'><img class='lazy' data-original='" + product.image +
+  var $aElement = $("<a class='product_item' href=><div class='show'><img class='lazy' data-original='" + product.image +
     "'></div><div class='title'>" + product.name + "</div><div class='button_box'><div class='price'>￥" +
     product.price + "</div><div class='market_price'>￥" + product.marketPrice + "</div></div>" + zhekouStr + "</a>");
   // $('img').error(function(){
@@ -138,7 +138,7 @@ function drawFloor(nodeFloor) {
 }
 
 function drawToMore(nodeIndex) {
-  var $aElement = $("<div class='moreDiv' onclick='showMoreProduct(" + nodeIndex + ")'><span>查看更多 </span><img class='moreImage lazy' data-original='http://res.pro365.cn/shop/icon_down.png'></div>");
+  var $aElement = $("<div class='moreDiv' onclick='showMoreProduct(" + nodeIndex + ")'><span>查看更多 </span><img class='moreImage lazy' data-original=></div>");
   return $aElement;
 }
 
